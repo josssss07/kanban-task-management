@@ -1,8 +1,10 @@
+'use client';
 import { twJoin } from "tailwind-merge";
-import Button from "../Button/Button";
+import Button from "../../../components/Button/Button";
 import Header from "../Header/Header";
 import { MoreVertical } from "feather-icons-react";
-import UnitElemDisplay from "../UnitElemDisplay/page";
+import {Eye} from "feather-icons-react";
+import UnitElemDisplay from "../../../components/UnitElemDisplay/page";
 
 export default function App() {
   return (
@@ -15,11 +17,12 @@ export default function App() {
                 Platform Launch
                 </div>
             <div className="flex ml-auto gap-4">
-              <Button>+ Add new Task</Button>
+              <Button onClickFun={()=>{}}>+ Add new Task</Button>
               <MoreVertical className="h-full w-10 text-medium-grey mx-2"/>
             </div>
           </UnitElemDisplay>
         </Header>
+        {/* <Button className="hide sm:block m-0 rounded-l-none w-min absolute bottom-10 left-0 p-3" onClickFun={()=>{}}><Eye/></Button> */}
       </div>
     </>
   );
