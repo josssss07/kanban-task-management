@@ -4,6 +4,10 @@ import AppHeader from "./App/page";
 import NavBar from "../../components/NavBar/NavBar";
 import PageSection from "../../components/NavBar/PageSection";
 import UnitElemDisplay from "../../components/UnitElemDisplay/page";
+import EyeButton from "../../components/EyeButton/EyeButton";
+import EyeOrNav from "./Helpers/EyeBunOrNavBar";
+import DisplayContext from "./Helpers/DisplayNavContext";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,21 +20,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full p-0 m-0">
       <body className={`${inter.className} box-border font-sans h-full p-0 m-0`}>
-        {/* <UnitElemDisplay styles={"text-heading-xl font-extrabold border-r-2 border-r-lines-light align-text-bottom p-4"}>kanban</UnitElemDisplay> */}
-
-        <div className="md:ml-[17rem]">
-        <AppHeader/>
-        {/* <Button className="hide sm:block m-0 rounded-l-none w-min absolute bottom-10 left-0 p-3" onClickFun={()=>{}}><Eye/></Button> */}  
-        {children}
-        </div>
-        <NavBar>
-          <div className="h-16 flex justify-center items-center text-heading-xl">kanban</div>
-          <div className="text-heading-s text-medium-grey p-4">ALL BOARDS(number)</div>
-          <PageSection styles={"text-medium-grey"}>Platform Launch</PageSection>
-          <PageSection styles={"text-medium-grey"}>Marketing Plan</PageSection>
-          <PageSection styles={"text-medium-grey"}>Roadmap</PageSection>
-          <PageSection styles={"text-main-purple"}>+Create New Board</PageSection>
-        </NavBar>
+        <DisplayContext>
+          {children}
+          </DisplayContext>
       </body>
     </html>
   );

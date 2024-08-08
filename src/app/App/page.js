@@ -3,8 +3,11 @@ import { twJoin } from "tailwind-merge";
 import Button from "../../../components/Button/Button";
 import Header from "../Header/Header";
 import { MoreVertical } from "feather-icons-react";
-import {Eye} from "feather-icons-react";
 import UnitElemDisplay from "../../../components/UnitElemDisplay/page";
+
+function addNewTask(){
+
+}
 
 export default function AppHeader() {
 
@@ -16,7 +19,7 @@ export default function AppHeader() {
                 Platform Launch
                 </div>
             <div className="flex ml-auto gap-4">
-              <Button onClickFun={()=>{}}>+ Add new Task</Button>
+              <Button onClickFun={()=>{addNewTask()}}>+ Add new Task</Button>
               <button>
               <MoreVertical className="h-full w-8 text-medium-grey mx-2"/>
               </button>
