@@ -35,3 +35,26 @@ body {
     text-wrap: balance;
   }
 }  */
+html{
+  --color-text: rgb(0,0,0);
+  --color-background: rgb(255,255,255);
+  --color-dialog: rgb(255,255,255);
+  --color-backgroundlighter: rgb(228, 235, 250);
+}
+
+@media (prefers-color-scheme: dark){
+  html{
+    --color-text: rgb(255,255,255);
+    --color-background: rgb(0,0,0);
+    --color-dialog: rgb(43, 44, 55);
+    --color-backgroundlighter: rgb(32, 33, 44);
+    --color-lineborder: rgb(62, 63, 76);
+    --color-lineinput: rgb(130, 143, 163);
+  }
+
+}
+
+body{
+  background: var(--color-background);
+  color: var(--color-text);
+}

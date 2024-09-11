@@ -33,7 +33,7 @@ export default function EyeOrNav() {
           </PageSection>
           <div className="mt-auto mb-4">
             <div className="flex justify-center gap-6 items-center">
-              <div  className="flex px-10 gap-6 bg-light-grey p-2">
+              <div  className="flex px-10 gap-6 bg-[var(--color-backgroundlighter)] p-2">
               <Sun fill={"grey"} style={{stroke:"grey"}} size={20}/>
               <div className="m-0 p-1 flex bg-main-purple rounded-full">
                 <Button className={"min-w-4 h-4 mr-0 my-0 ml-0 px-0 py-0 bg-white"} />

@@ -5,9 +5,11 @@ import { MoreVertical } from "feather-icons-react";
 import UnitElemDisplay from "../../../components/UnitElemDisplay/page";
 import { useState } from "react";
 import AddNewTask from "../Task/AddTask";
+import ChangeOptionBoard from "../Board/ChangeBoard.js";
 
 export default function AppHeader() {
-  const [addTaskDialog, setAddTaskDialog] = useState(true);
+  const [addTaskDialog, setAddTaskDialog] = useState(false);
+  const [changeBoard, setChangeBoard] = useState(false);
 
   function addNewTask() {
     setAddTaskDialog(!addTaskDialog);
@@ -30,13 +32,15 @@ export default function AppHeader() {
               + Add new Task
             </Button>
             <AddNewTask open={addTaskDialog} onChange={setAddTaskDialog} />
-            <button>
+            <button onClick={()=>{
+              setChangeBoard(!changeBoard);
+            }}>
               <MoreVertical className="h-full w-8 text-medium-grey mx-2" />
+              <ChangeOptionBoard open={changeBoard} onChange={setChangeBoard}/>
             </button>
           </div>
         </UnitElemDisplay>
       </Header>
-      {/* {addTaskDialog?<AddNewTask/>:<></>} */}
     </div>
   );
 }

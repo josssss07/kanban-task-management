@@ -6,7 +6,7 @@ import Button from "../../components/Button/Button";
 export default function Home() {
   
   const [displayNav, setDisplayNav] = useContext(DisplayNavContext);
-  const general = "bg-light-grey flex h-[89%] flex-col items-center justify-center text-medium-grey";
+  const general = "bg-[var(--color-backgroundlighter)] flex h-[89%] flex-col items-center justify-center text-medium-grey";
 
   return (
     <main className={(displayNav? general+" ml-[17rem]":general)}>

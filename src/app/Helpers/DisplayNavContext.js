@@ -14,7 +14,7 @@ export default function DisplayContext({children}) {
       <div className="flex">
         <UnitElemDisplay
           styles={
-            "text-heading-xl font-extrabold border-r-2 border-r-lines-light align-text-bottom p-4"
+            "text-heading-xl font-extrabold border-r-2 border-r-[var(--color-lineborder)] align-text-bottom p-4"
           }
         >
           kanban

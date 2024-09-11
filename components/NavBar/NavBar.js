@@ -10,7 +10,7 @@ export default function NavBar({clickBun , children}){
 <Dialog.Portal className="h-full">
   <Dialog.Overlay />
   <FocusScope trapped={false}>
-  <Dialog.Content  className="absolute top-0 h-full border-r-2 bg-white border-r-lines-light md:w-1/5">
+  <Dialog.Content  className="absolute top-0 h-full border-r-2 bg-[var(--color-dialog)] border-r-[var(--color-lineborder)] md:w-1/5">
     <Dialog.Title />
     <Dialog.Description className="flex flex-col h-full" >{children}</Dialog.Description>
     <Dialog.Close />
