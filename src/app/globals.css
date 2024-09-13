@@ -35,15 +35,20 @@ body {
     text-wrap: balance;
   }
 }  */
-html{
+:root{
+  --color-prefer: "light";
   --color-text: rgb(0,0,0);
   --color-background: rgb(255,255,255);
   --color-dialog: rgb(255,255,255);
-  --color-backgroundlighter: rgb(228, 235, 250);
+  --color-backgroundlighter:rgb(244, 247, 253);
+  --color-lineborder:rgb(228, 235, 250);
+  --color-lineinput:rgb(131, 144 , 164);
+
 }
 
 @media (prefers-color-scheme: dark){
-  html{
+  :root{
+    --color-prefer: "dark";
     --color-text: rgb(255,255,255);
     --color-background: rgb(0,0,0);
     --color-dialog: rgb(43, 44, 55);
