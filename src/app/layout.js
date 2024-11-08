@@ -18,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full p-0 m-0 box-border">
+    <html lang="en" className="min-h-full p-0 m-0 box-border">
       <body className={`${inter.className} box-border font-sans h-full p-0 m-0 text-[var(--color-text)] bg-[var(--color-dialog)]`}>
         <DisplayContext>
           {children}

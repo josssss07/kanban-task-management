@@ -4,8 +4,8 @@ import React from "react";
 
 
 
-export default function CustomDialog({open , onChange,title , heightx , heighty, children}){
-    return(<div>
+export default function CustomDialog({open , onChange,title , heightx , heighty, titleWidth="w-fit", children}){
+    return(<div onClick={(e)=>{e.stopPropagation()}}>
         <Dialog.Root open={open} onOpenChange={onChange}>
             <Dialog.Portal >
                 <Dialog.Overlay  className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-25 overflow-clip"/>
@@ -15,7 +15,7 @@ export default function CustomDialog({open , onChange,title , heightx , heighty,
               left: `calc(100% - calc(${heightx}px + 30rem))`,
               top: `calc(100vh - ${heighty}px)`,
             }}
-          ><Dialog.Title className = "text-heading-l">{title}</Dialog.Title>
+          ><Dialog.Title className = {`text-heading-l ${titleWidth}`}>{title}</Dialog.Title>
                     <Dialog.Description>{children}</Dialog.Description>
                 </Dialog.Content>
             </Dialog.Portal>

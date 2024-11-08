@@ -11,22 +11,26 @@ import AddNewBoard from "../Board/AddNewBorad";
 import { Light_colors, Dark_colors } from "../constants";
 
 export default function EyeOrNav() {
-  var colorVar = null;
+  var colorVar ;
   const [colorTheme , setColorTheme]= useState(null);
   useEffect(()=>{
+    colorVar = window.localStorage.getItem("color-theme");
+    console.log(colorVar+" is so and so ");
+    if(colorVar == null){
      colorVar = getComputedStyle(document.documentElement).getPropertyValue('--color-prefer').trim();
+    }
      setColorTheme(colorVar);
      
   },[]);
 
   useEffect(()=>{
-    
     console.log(colorTheme);
     toggleTheme();
   }, [colorTheme]);
 
   function toggleTheme(){
     console.log(colorTheme);
+    window.localStorage.setItem("color-theme" , colorTheme==null? colorVar:colorTheme);
     if(colorTheme == "light"){
       const color = Light_colors;
       document.documentElement.style.setProperty('--color-prefer', '"light"');
@@ -77,7 +81,7 @@ export default function EyeOrNav() {
           {newBoard? <AddNewBoard open={newBoard} onChange={setNewBoard}/>: undefined}
           <div className="mt-auto mb-4">
             <div className="flex justify-center gap-6 items-center">
-              <div  className="flex px-10 gap-6 bg-[var(--color-backgroundlighter)] p-2">
+              <div  className="flex w-full mx-2 gap-6 bg-[var(--color-backgroundlighter)] p-2">
               <Sun fill={"grey"} style={{stroke:"grey"}} size={20}/>
               <div className="m-0 p-1 flex bg-main-purple rounded-full">
               <label className="relative inline-block w-[55px] h-[24px]">

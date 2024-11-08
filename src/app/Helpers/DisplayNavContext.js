@@ -3,7 +3,6 @@
 import { createContext, React , useState } from "react";
 import UnitElemDisplay from "../../../components/UnitElemDisplay/page";
 import AppHeader from "../App/page";
-import EyeOrNav from "./EyeBunOrNavBar";
 
 export const DisplayNavContext = createContext();
 
@@ -21,7 +20,6 @@ export default function DisplayContext({children}) {
         </UnitElemDisplay>
         <AppHeader />
       </div>
-      <EyeOrNav />
       {children}
     </DisplayNavContext.Provider>
   );

@@ -36,10 +36,25 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 /////todo
--complete all the dialogs
+-complete one dialog
 -wire up the trigger dialog
--dark mode
+-avoid flickering (decide on adding cookies or no)
 -the plan in wach section (to , don , doing ...)
 -make things flexible
 -retrive from the storeage
 -backend
+
+//number of dialogs
+-base level 1 works
+-dynamic columns
+-tasks
+-task - subtask(like a todo list)
+-delte task(wire up)
+-edit task(wrie up)
+-make all the data as json(reasearch before)
+
+//fix
+change the poition of eye or nav to layout page since everything is gonna be layed after the layout page(will solve the border problem i suppose)
+top border when opening the eye
+when dialog opens the scroller dissappears and cant interact with other elements
+make responsive
