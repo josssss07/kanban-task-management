@@ -43,11 +43,12 @@ module.exports = {
            fontWeight:'700',
            letterSpacing:'2.4px'
           }],        
-        'body-l':['13px' ,
+        'body-l':['15px' ,
           {lineHeight:'23px',
            fontWeight:'500',
+           letterSpacing:'1px'
           }],        
-        'body-l':['12px' ,
+        'body-m':['12px' ,
           {lineHeight:'15px',
            fontWeight:'700',
           }],

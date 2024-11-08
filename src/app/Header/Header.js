@@ -1,14 +1,15 @@
 import { twJoin } from "tailwind-merge";
+import { DisplayNavContext } from "../Helpers/DisplayNavContext";
+import { useContext } from "react";
+
 
 export default function Header({ children }) {
+  
+const [displayNav, setDisplayNav] = useContext(DisplayNavContext);
+const general = "flex gap-5 w-full h-16";
   return (
     <div
-      className={twJoin(
-        "flex",
-        "gap-5",
-        "w-full",
-        "h-16",
-      )}
+    className = {(displayNav == true? general+" ml-36":general)}
     >
       {children}
     </div>
