@@ -6,17 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate":"node-pg-migrate"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-focus-scope": "^1.1.0",
+    "@vercel/postgres": "^0.10.0",
     "dotenv": "^16.4.5",
     "feather-icons-react": "^0.7.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.3",
     "next": "14.2.3",
+    "node-pg-migrate": "^7.7.1",
+    "pg": "^8.13.1",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.3.0"
