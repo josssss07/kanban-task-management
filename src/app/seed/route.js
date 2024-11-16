@@ -41,7 +41,7 @@ async function seedSubtaskTable(){
     await client.sql`CREATE TABLE IF NOT EXISTS subtasks(
     subtaskId SERIAL PRIMARY KEY,
     subtaskName VARCHAR(500),
-    taskId SERIAL REFERNECES tasks(taskId)
+    taskId SERIAL REFERENCES tasks(taskId)
     ON DELETE CASCADE);`;
 }
 
