@@ -9,6 +9,7 @@ exports.shorthands = undefined;
  * @returns {Promise<void> | void}
  */
 exports.up = (pgm) => {
+    console.log("running up migration");
     pgm.sql(`
         CREATE TABLE users (
         id SERIAL PRIMARY KEY,
@@ -28,5 +29,7 @@ exports.up = (pgm) => {
  * @returns {Promise<void> | void}
  */
 exports.down = (pgm) => {
+    
+    console.log("running down migration");
     pgm.sql(`DROP TABLE users`);
 };
