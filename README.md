@@ -36,6 +36,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 /////todo
+-individual scroll bar 
 -complete one dialog
 -wire up the trigger dialog
 -avoid flickering (decide on adding cookies or no)
@@ -54,7 +55,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 -make all the data as json(reasearch before)
 
 //fix
-change the poition of eye or nav to layout page since everything is gonna be layed after the layout page(will solve the border problem i suppose)
-top border when opening the eye
-when dialog opens the scroller dissappears and cant interact with other elements
 make responsive

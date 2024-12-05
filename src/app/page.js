@@ -120,17 +120,16 @@ export default function Home() {
 ];
 
   
-  const [displayNav, setDisplayNav] = useContext(DisplayNavContext);
-  const general = "bg-[var(--color-backgroundlighter)] p-0 m-0 h-full  border-2 border-red text-medium-grey";
 
-  return (<>
-  <EyeOrNav/>
-  <div className={(displayNav? general+" ml-auto":general)}>
-    
-    
-      {taskObject.length!=0? <Backdrop taskObject={taskObject}/>:   <main className="flex h-full flex-row items-center justify-center"><h1 className="font-semibold">This board is empty. Create a new column to get started.
-</h1>
-    <AddColumns/> </main>}
+  return (
+  <>
+    <div className="bg-[var(--color-backgroundlighter)] p-0 m-0 h-full text-medium-grey">
+        {taskObject.length!=0? 
+            <Backdrop taskObject={taskObject}/>:
+            <main className="flex h-full flex-row items-center justify-center">
+                <h1 className="font-semibold">This board is empty. Create a new column to get started.</h1>
+                <AddColumns/> 
+            </main>}
       </div>
 
 </>

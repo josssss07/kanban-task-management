@@ -66,6 +66,7 @@ export default function EyeOrNav() {
     <>
       {displayNav === true ? (
         <NavBar clickBun={setDisplay}>
+          <div className= "flex flex-col h-full">
           <div className="h-16 flex justify-center items-center text-heading-xl">
             kanban
           </div>
@@ -79,7 +80,7 @@ export default function EyeOrNav() {
             +Create New Board
           </PageSection>
           {newBoard? <AddNewBoard open={newBoard} onChange={setNewBoard}/>: undefined}
-          <div className="mt-auto mb-4">
+          <div className="mt-auto">
             <div className="flex justify-center gap-6 items-center">
               <div  className="flex w-full mx-2 gap-6 bg-[var(--color-backgroundlighter)] p-2">
               <Sun fill={"grey"} style={{stroke:"grey"}} size={20}/>
@@ -98,6 +99,7 @@ export default function EyeOrNav() {
             <EyeOff  style={{stroke:"grey"}} size={19}/>
             <div className="text-medium-grey pl-3 ">Hide Sidebar</div>
             </button>
+          </div>
           </div>
         </NavBar>
       ) : (
