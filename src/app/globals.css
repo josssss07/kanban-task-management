@@ -35,6 +35,17 @@ body {
     text-wrap: balance;
   }
 }  */
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background:transparent;
+}
+::-webkit-scrollbar-thumb{
+  background:var(--color-lineinput);
+  border-radius:25px;
+}
 :root{
   --color-prefer: "light";
   --color-text: rgb(0,0,0);
@@ -62,4 +73,7 @@ body {
 body{
   background: var(--color-background);
   color: var(--color-text);
+}
+[data-radix-focus-scope] {
+  pointer-events: auto;
 }

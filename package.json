@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate":"node-pg-migrate"
+    "migrate": "node-pg-migrate"
   },
   "dependencies": {
+    "@ariakit/react": "^0.4.15",
     "@headlessui/react": "^2.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-focus-scope": "^1.1.0",
