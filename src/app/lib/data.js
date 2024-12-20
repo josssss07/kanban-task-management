@@ -1,28 +1,29 @@
 import { sql } from "@vercel/postgres";
 
-export async function fetchBoards() {
-  const data = await sql`SELECT * FROM boards
-        WHERE userId = 1;`;
-  return data.rows;
+//{rows} destructuring the object that we get 
+export async function fetchBoards(userId) {
+    const { rows} = await sql`SELECT * FROM boards WHERE userid =  ${userId};`;
+    return rows; 
+    //Assuming rows contain { boardid, boardname, userid }
 }
 
-
 export async function fetchHeaders(boardId) {
-    const data = await sql`SELECT * FROM headers
+    const {rows} = await sql`SELECT * FROM headers
         WHERE boardId = ${boardId};`;
-    return data.rows;
+        // console.log(rows);
+    return rows;
 }
 
 export async function fetchTasks(headerId) {
-    const data = await sql`SELECT * FROM tasks
+    const {rows} = await sql`SELECT * FROM tasks
         WHERE headerId = ${headerId};`;
-        return data.rows;
+        return rows;
 }
 
 export async function fetchSubasks(taskId) {
-    const data = await sql`SELECT * FROM subtasks
+    const {rows} = await sql`SELECT * FROM subtasks
         WHERE taskId = ${taskId};`;
-        return data.rows;
+        return rows;
 }
 
 export async function insertUser(userName, password, emailId) {
@@ -54,6 +55,10 @@ export async function insertSubtask(subtaskName, taskId) {
 export async function deleteUser(userId) {
     await sql`DELETE FROM users
         WHERE userId = ${userId};`;
+}
+
+export async function deleteAllExceptUsers(){
+    await sql`TRUNCATE subtasks, tasks, headers, boards;`;
 }
 
 export async function deleteBoard(boardId) {

@@ -9,6 +9,7 @@ import { DisplayNavContext } from "./DisplayNavContext";
 import { useContext } from "react";
 import AddNewBoard from "../Board/AddNewBorad";
 import { Light_colors, Dark_colors } from "../constants";
+import DisplayBoards from "./DisplayBoard";
 
 export default function EyeOrNav() {
   var colorVar ;
@@ -70,15 +71,8 @@ export default function EyeOrNav() {
           <div className="h-16 flex justify-center items-center text-heading-xl">
             kanban
           </div>
-          <div className="text-heading-s text-medium-grey p-4">
-            ALL BOARDS(number)
-          </div>
-          <PageSection styles={"text-medium-grey"}>Platform Launch</PageSection>
-          <PageSection styles={"text-medium-grey"}>Marketing Plan</PageSection>
-          <PageSection styles={"text-medium-grey"}>Roadmap</PageSection>
-          <PageSection styles={"text-main-purple"} state={newBoard} onChange={setNewBoard}>
-            +Create New Board
-          </PageSection>
+          <DisplayBoards/>
+          
           {newBoard? <AddNewBoard open={newBoard} onChange={setNewBoard}/>: undefined}
           <div className="mt-auto">
             <div className="flex justify-center gap-6 items-center">

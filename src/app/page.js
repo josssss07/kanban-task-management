@@ -1,11 +1,7 @@
-'use client';
-import { useContext, React} from "react";
-import { DisplayNavContext } from "./Helpers/DisplayNavContext";
-import AddColumns from "./Backdrop/AddColum";
-import Backdrop from "./Backdrop/Backdrop";
-import EyeOrNav from "./Helpers/EyeBunOrNavBar";
+'use server';
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default  async function Home() {
   const taskObject = [
     {
         Currentstatus: "ToDo",
@@ -118,19 +114,6 @@ export default function Home() {
         ]
     }
 ];
-
+ redirect('/Board/1');
   
-
-  return (
-  <>
-    <div className="bg-[var(--color-backgroundlighter)] p-0 m-0 h-full text-medium-grey">
-        {taskObject.length!=0? 
-            <Backdrop taskObject={taskObject}/>:
-            <main className="flex h-full flex-row items-center justify-center">
-                <h1 className="font-semibold">This board is empty. Create a new column to get started.</h1>
-                <AddColumns/> 
-            </main>}
-      </div>
-
-</>
-  );}
+}

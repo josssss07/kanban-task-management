@@ -4,6 +4,7 @@ import { useContext, React} from "react";
 import { DisplayNavContext } from "./DisplayNavContext";
 
 export default function LayoutStructure({children}){
+  
     
   const [displayNav, setDisplayNav] = useContext(DisplayNavContext);
     return(
