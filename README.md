@@ -36,7 +36,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 /////todo
--individual scroll bar 
 -complete one dialog
 -wire up the trigger dialog
 -avoid flickering (decide on adding cookies or no)
@@ -55,4 +54,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 -make all the data as json(reasearch before)
 
 //fix
+sun moon
 make responsive
+
+//future
+error handling
+animations
