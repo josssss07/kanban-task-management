@@ -10,8 +10,8 @@ export const Light_colors ={
 export const Dark_colors ={
     text:'rgb(255, 255, 255)',
     background:'rgb(0, 0, 0)',
-    dialog:'rgb(43, 44, 55)',
-    backgroundlighter:'rgb(32, 33, 44)',
+    backgroundlighter:'rgb(43, 44, 55)',
+    dialog:'rgb(32, 33, 44)',
     lineborder:'rgb(62, 63, 76)',
     lineinput:'rgb(130, 143, 163)',
 }

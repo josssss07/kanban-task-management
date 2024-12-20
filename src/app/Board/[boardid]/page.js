@@ -13,6 +13,7 @@ export default function Board({params}){
     // headers.map(header => fetchTasks(header.headerid)));
         
     const [headers, setHeaders] = useState();
+    const [tasks, setTasks] = useState();
     useEffect(()=>{
         // console.log("hi");
         const fetchData= async()=>{
@@ -26,6 +27,22 @@ export default function Board({params}){
                 const data = await response.json();
                 console.log(data);
                 setHeaders(data.headers);
+
+                const promise = data.headers.map(async(header)=>{
+                    const taskres = await fetch(`/Header/api/${header.headerid}`, {cache: 'no-store'});
+                    
+                if(!taskres.ok){
+                    throw new Error("failed to fetch tasks");
+                }
+                const data = await taskres.json();
+                // console.log(data);
+                return {header: header.headerid, data};
+                
+                });
+
+                const taskdata =await Promise.all(promise);
+                console.log(taskdata);
+                setTasks(taskdata);
             }
             catch(error){
                 console.log("Error fetching headers:", error);
@@ -34,12 +51,13 @@ export default function Board({params}){
         fetchData();
     },[params.boardid]);
     // console.log(headers);
-
+    console.log(tasks);
     // return(<div></div>);
     return(<div className = "flex">
     {headers== undefined? <div>Loading</div>:headers.map((header, index)=>{return (<div className=" overflow-y-auto max-h-[90vh]" key={header.headerid}>
             <div className="text-medium-grey p-2"><div className="p-1 text-body-l">{header.headername} (0)</div>
-           {/* <IndividualTask  tasks = {tasks[index]} key={Math.random()}/> */}
+           {tasks== undefined?<div>Loading</div>:
+           <IndividualTask  tasks = {tasks[index].data.task} key={Math.random()}/> }
            </div>
         </div>)})}
         

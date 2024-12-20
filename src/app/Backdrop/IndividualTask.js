@@ -4,8 +4,6 @@ import SubtasksForm from "./SubTask";
 
 
 export default function IndividualTask({tasks}) {
-  console.log("somethig");
-console.log(tasks);
 
   const [openDialog, setOpenDialog] = React.useState(false);
   return (
