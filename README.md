@@ -36,13 +36,11 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 /////todo
--complete one dialog
 -wire up the trigger dialog
 -avoid flickering (decide on adding cookies or no)
 -the plan in wach section (to , don , doing ...)
 -make things flexible
 -retrive from the storeage
--backend
 
 //number of dialogs
 -base level 1 works
@@ -56,6 +54,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 //fix
 sun moon
 make responsive
+fix colors for tasks
+cache(when to cache and when to not)
 
 //future
 error handling
