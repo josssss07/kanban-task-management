@@ -17,20 +17,23 @@
     "@vercel/postgres": "^0.10.0",
     "dotenv": "^16.4.5",
     "feather-icons-react": "^0.7.0",
+    "lucide-react": "^0.471.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.3",
-    "next": "14.2.3",
+    "next": "^14.2.23",
     "next-auth": "^4.24.11",
     "node-pg-migrate": "^7.7.1",
     "pg": "^8.13.1",
+    "postcss-loader": "^8.1.1",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
-    "postcss": "^8",
+    "postcss": "^8.4.49",
     "tailwindcss": "^3.4.4"
   }
 }

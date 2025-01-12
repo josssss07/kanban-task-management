@@ -1,0 +1,5 @@
+Auth system for the dashboard
+
+1: auth system can connect to supabase which will host our sql servers 
+2: auth system will be using next auth and prisma 
+3: auth system will have encryption using  

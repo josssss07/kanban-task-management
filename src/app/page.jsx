@@ -1,5 +1,4 @@
-'use server';
-import { redirect } from "next/navigation";
+import LandingPage from "./Landing_page/Landing";
 
 export default  async function Home() {
 //   const taskObject = [
@@ -32,6 +31,10 @@ export default  async function Home() {
 //             }
 //         ]
 //     }];
- redirect('/Board/1');
+return (
+    <div>
+        <LandingPage/>
+    </div>
+);
   
 }
