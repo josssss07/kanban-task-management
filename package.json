@@ -19,7 +19,7 @@
     "feather-icons-react": "^0.7.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.3",
-    "next": "14.2.3",
+    "next": "^14.2.23",
     "next-auth": "^4.24.11",
     "node-pg-migrate": "^7.7.1",
     "pg": "^8.13.1",

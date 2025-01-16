@@ -16,7 +16,7 @@ export default function EyeOrNav() {
   const [colorTheme , setColorTheme]= useState(null);
   useEffect(()=>{
     colorVar = window.localStorage.getItem("color-theme");
-    console.log(colorVar+" is so and so ");
+    // console.log(colorVar+" is so and so ");
     if(colorVar == null){
      colorVar = getComputedStyle(document.documentElement).getPropertyValue('--color-prefer').trim();
     }
@@ -25,12 +25,12 @@ export default function EyeOrNav() {
   },[]);
 
   useEffect(()=>{
-    console.log(colorTheme);
+    // console.log(colorTheme);
     toggleTheme();
   }, [colorTheme]);
 
   function toggleTheme(){
-    console.log(colorTheme);
+    // console.log(colorTheme);
     window.localStorage.setItem("color-theme" , colorTheme==null? colorVar:colorTheme);
     if(colorTheme == "light"){
       const color = Light_colors;
@@ -58,7 +58,16 @@ export default function EyeOrNav() {
     }
   }
   const [displayNav, setDisplayNav] = useContext(DisplayNavContext);
-  const [newBoard , setNewBoard] = useState(false);
+  const [newBoard , setNewBoard] = useState({state:false,
+    newElem:undefined
+  });
+  // console.log(newBoard.state);
+  function setBoard(newstate){
+    setNewBoard((prevBoard)=>({
+      ...prevBoard,
+      state:newstate
+    }));
+  }
 
   function setDisplay() {
     setDisplayNav(!displayNav);
@@ -71,9 +80,10 @@ export default function EyeOrNav() {
           <div className="h-16 flex justify-center items-center text-heading-xl">
             kanban
           </div>
-          <DisplayBoards/>
           
-          {newBoard? <AddNewBoard open={newBoard} onChange={setNewBoard}/>: undefined}
+          <DisplayBoards state={newBoard} stateChange={setBoard}/>
+          
+          {newBoard.state? <AddNewBoard open={newBoard} onChange={setNewBoard}/>: undefined}  
           <div className="mt-auto">
             <div className="flex justify-center gap-6 items-center">
               <div  className="flex w-full mx-2 gap-6 bg-[var(--color-backgroundlighter)] p-2">

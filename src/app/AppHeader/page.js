@@ -20,7 +20,7 @@ export default function AppHeader() {
       <Header>
         <UnitElemDisplay styles={"flex w-full h-full"}>
           <div className="text-heading-xl h-full flex justify-center items-center">
-            Platform Launch
+            Platform 
           </div>
           <div className="flex ml-auto gap-4">
             <Button

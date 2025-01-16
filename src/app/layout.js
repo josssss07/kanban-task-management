@@ -16,12 +16,12 @@ export default function RootLayout({ children }) {
     <html lang="en" className="min-h-full p-0 m-0 box-border">
       <body
         className={`${inter.className} box-border font-sans h-full p-0 m-0 text-[var(--color-text)] bg-[var(--color-dialog)]  overflow-y-hidden`}
-      >
-        <DisplayContext>
-          <LayoutStructure>
-          {children}
-          </LayoutStructure>
-        </DisplayContext>
+       >
+         <DisplayContext>
+           <LayoutStructure>
+           {children}
+           </LayoutStructure>
+         </DisplayContext>
       </body>
     </html>
   );

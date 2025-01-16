@@ -3,7 +3,7 @@
 import PageSection from "../../../components/NavBar/PageSection";
 import { useEffect, useState} from "react";
 
-export default function DisplayBoards(){
+export default function DisplayBoards({state, stateChange}){
     const [board, setBoard] = useState();
     useEffect(()=>{
         const fetchData=async()=>{
@@ -20,8 +20,8 @@ export default function DisplayBoards(){
         };
         fetchData();
     }, []);
+    // console.log(state.state);
 
-    const [newBoard , setNewBoard] = useState(false);
     return(
         <div>
             <div className="text-heading-s text-medium-grey p-4">
@@ -29,7 +29,7 @@ export default function DisplayBoards(){
           </div>
           {board?.map((board)=>(<PageSection  styles={"text-medium-grey"} key ={board.id}>{board.boardname}</PageSection>)
           )}
-          <PageSection styles={"text-main-purple"} state={newBoard} onChange={setNewBoard}>
+          <PageSection styles={"text-main-purple"} state={state.state} onChange={stateChange}>
             +Create New Board
           </PageSection>
         </div>
