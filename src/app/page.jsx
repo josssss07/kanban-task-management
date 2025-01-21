@@ -1,6 +1,11 @@
 import LandingPage from "./Landing_page/Landing";
 
 export default  async function Home() {
+    return (
+        <div>
+            <LandingPage/>
+        </div>
+    );
 //   const taskObject = [
 //     {
 //         Currentstatus: "ToDo",
@@ -31,10 +36,6 @@ export default  async function Home() {
 //             }
 //         ]
 //     }];
-return (
-    <div>
-        <LandingPage/>
-    </div>
-);
+
   
 }
