@@ -1,11 +1,5 @@
+/*
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities; 
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
-/*   
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -115,7 +109,6 @@ body {
   }
 }
 
-/* Body Styling */
 body {
   color: var(--color-text);
   background: var(--color-background);
@@ -142,7 +135,7 @@ body {
   border-radius: 25px;
 }
 
-/* Text Balance Utility */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

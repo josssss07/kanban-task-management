@@ -26,6 +26,12 @@ module.exports = {
         'sans':['Plus Jakarta Sans', 'sans-serif'],
       },
       fontSize:{
+        'heading-xxxx-large':['68px',
+          {
+            lineHeight:'160px',
+            fontWeight:'700',
+          }
+        ],
         'heading-xl':['24px' ,
            {lineHeight:'30px',
             fontWeight:'700',
@@ -52,6 +58,12 @@ module.exports = {
           {lineHeight:'15px',
            fontWeight:'700',
           }],
+
+          'standout-m':['33px' ,
+          {lineHeight:'38px',
+           fontWeight:'70',
+          }],
+        
       },
     extend: {
       backgroundImage: {
