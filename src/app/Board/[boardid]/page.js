@@ -50,12 +50,12 @@ export default function Board({params}){
         };
         fetchData();
     },[params.boardid]);
-    // console.log(headers);
+    console.log(headers);
     console.log(tasks);
     // return(<div></div>);
     return(<div className = "flex">
     {headers== undefined? <div>Loading</div>:headers.map((header, index)=>{return (<div className=" overflow-y-auto max-h-[90vh]" key={header.headerid}>
-            <div className="text-medium-grey p-2"><div className="p-1 text-body-l">{header.headername} (0)</div>
+            <div className="text-medium-grey p-2"><div className="p-1 text-body-l">{header.headername} ({tasks== undefined? 0:tasks[index].data.task.length})</div>
            {tasks== undefined?<div>Loading</div>:
            <IndividualTask  tasks = {tasks[index].data.task} key={Math.random()}/> }
            </div>

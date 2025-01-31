@@ -68,10 +68,26 @@ export default function EyeOrNav() {
       state:newstate
     }));
   }
+  function setNewElem(element){
+    console.log("rerender2");
+    setNewBoard((prevBoard)=>({
+      ...prevBoard,
+      newElem: element
+    }));
+  }
 
+  function setElemUndefined(){
+    setNewBoard((prevBoard)=>({
+      ...prevBoard,
+      newElem: undefined
+    }));
+  }
   function setDisplay() {
     setDisplayNav(!displayNav);
   }
+
+
+
   return (
     <>
       {displayNav === true ? (
@@ -81,9 +97,9 @@ export default function EyeOrNav() {
             kanban
           </div>
           
-          <DisplayBoards state={newBoard} stateChange={setBoard}/>
+          <DisplayBoards state={newBoard} stateChange={setBoard}  newElem={newBoard.newElem} setElemUndefined={setElemUndefined}/>
           
-          {newBoard.state? <AddNewBoard open={newBoard} onChange={setNewBoard}/>: undefined}  
+          {newBoard.state? <AddNewBoard open={newBoard} onChange={setBoard} newElem={setNewElem}/>: undefined}  
           <div className="mt-auto">
             <div className="flex justify-center gap-6 items-center">
               <div  className="flex w-full mx-2 gap-6 bg-[var(--color-backgroundlighter)] p-2">
@@ -93,7 +109,7 @@ export default function EyeOrNav() {
                 <input type="checkbox" className=" w-0 h-0 peer" onChange={()=>{
                   colorTheme=="light"?setColorTheme("dark"):setColorTheme("light");
                 }}/>
-                  <span className="absolute  top-0 left-0 right-0 bottom-0 cursor-pointer bg-white duration-[0.4s] w-[24px] rounded-full h-[24px] peer-checked:translate-x-8"></span>
+                  <div className="absolute  top-0 left-0 right-0 bottom-0 cursor-pointer bg-white duration-[0.4s] w-[24px] rounded-full h-[24px] peer-checked:translate-x-8"></div>
               </label>
                 </div>
               <Moon fill={"grey"} style={{stroke:"grey"}} size={20}/>

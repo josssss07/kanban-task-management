@@ -121,7 +121,19 @@ async function seedSubtaskTable(){
     // VALUES('Finish up the final version of the api', 1)`;
 }
 export async function dropAll(){
-    await client.sql`TRUNCATE TABLE subtasks, tasks, headers, boards, users RESTART IDENTITY CASCADE;`;
+     await client.sql`
+    DELETE FROM subtasks;
+    DELETE FROM tasks;
+    DELETE FROM headers;
+    DELETE FROM boards;
+    DELETE FROM users;
+    ALTER SEQUENCE users_userid_seq RESTART WITH 1;
+    ALTER SEQUENCE boards_boardid_seq RESTART WITH 1;
+    ALTER SEQUENCE headers_headerid_seq RESTART WITH 1;
+    ALTER SEQUENCE tasks_taskid_seq RESTART WITH 1;
+    ALTER SEQUENCE subtasks_subtaskid_seq RESTART WITH 1;
+`;
+
 }
 
 

@@ -14,6 +14,12 @@ export async function fetchHeaders(boardId) {
     return rows;
 }
 
+export async function fetchBoardId(boardName){
+    const {rows} = await sql`SELECT * FROM boards
+    WHERE boardName = ${boardName};`;
+    return rows;
+}
+
 export async function fetchTasks(headerId) {
     const {rows} = await sql`SELECT * FROM tasks
         WHERE headerId = ${headerId};`;
@@ -32,13 +38,16 @@ export async function insertUser(userName, password, emailId) {
 }
 
 export async function insertBoard(boardName, userId) {
-    await sql`INSERT INTO boards (boardName, userId)
-        VALUES ('${boardName}', ${userId});`;
+    console.log(boardName);
+    console.log(userId);
+    await sql`INSERT INTO boards (boardName,userId)
+        VALUES(${boardName}, ${userId});`;
+        console.log("done");
 }
 
 export async function insertHeader(headerName, boardId) {
     await sql`INSERT INTO headers (headerName, boardId)
-        VALUES ('${headerName}', ${boardId});`;
+        VALUES (${headerName}, ${boardId});`;
 }
 
 export async function insertTask(taskName, headerId) {
