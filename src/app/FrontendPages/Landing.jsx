@@ -1,3 +1,4 @@
+//TODO: add a bottom nav bar that just does something????
 'use client';
 import React from 'react'
 import Navbar from './LandingComponents/Navbar';
@@ -9,7 +10,6 @@ const Landing = () => {
     <div>
       <Navbar></Navbar>
       <MainArea></MainArea>
-      <BottomNav></BottomNav>
     </div>
   )
 }
