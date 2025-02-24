@@ -1,7 +1,15 @@
 'use server';
 import { redirect } from "next/navigation";
+import Landing from "./FrontendPages/Landing";
+import { Prata } from "next/font/google";
 
 export default  async function Home() {
+    //Page redirects to the landing page. 
+   return  (
+    <Landing></Landing>
+   );
+
+
 //   const taskObject = [
 //     {
 //         Currentstatus: "ToDo",
@@ -32,6 +40,6 @@ export default  async function Home() {
 //             }
 //         ]
 //     }];
- redirect('/Board/1');
+
   
 }

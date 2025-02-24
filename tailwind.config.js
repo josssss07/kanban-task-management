@@ -8,6 +8,8 @@ module.exports = {
   ],
   theme: {
     colors:{
+      'semi-white': '#f5f2f7',
+      'deep-purple': '#7910e8',
       'main-purple':'#635FC7',
       'main-purple-hover':'#A8A4FF',
       'black':'#000112',
@@ -26,6 +28,10 @@ module.exports = {
         'sans':['Plus Jakarta Sans', 'sans-serif'],
       },
       fontSize:{
+        'heading-extra-large':['56px' ,
+           {lineHeight:'30px',
+            fontWeight:'700',
+           }],
         'heading-xl':['24px' ,
            {lineHeight:'30px',
             fontWeight:'700',
