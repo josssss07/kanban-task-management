@@ -1,6 +1,6 @@
 'use server';
 import { redirect } from "next/navigation";
-import Landing from "./FrontendPages/Landing";
+import Landing from "./Pages/Landing";
 import { Prata } from "next/font/google";
 
 export default  async function Home() {

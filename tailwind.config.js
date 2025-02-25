@@ -28,7 +28,7 @@ module.exports = {
         'sans':['Plus Jakarta Sans', 'sans-serif'],
       },
       fontSize:{
-        'heading-extra-large':['56px' ,
+        'heading-extra-large':['40px' ,
            {lineHeight:'30px',
             fontWeight:'700',
            }],
