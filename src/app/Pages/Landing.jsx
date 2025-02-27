@@ -4,7 +4,7 @@ import React from 'react'
 import Navbar from './LandingComponents/Navbar';
 import MainArea from './LandingComponents/MainArea';
 import BottomNav from './LandingComponents/BottomNav';
-import Login from './login/login';
+import Login from './Login/login';
 
 const Landing = () => {
   return (

@@ -20,7 +20,7 @@ const MainArea = () => {
   }, []);
 
   const signUpOrLogin = () => {
-    router.push("/Auth/login_page"); // Fixed route path
+    router.push("/Login/login"); // Fixed route path
   };
 
   return (

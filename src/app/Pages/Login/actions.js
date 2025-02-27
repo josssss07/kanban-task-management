@@ -3,14 +3,14 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/app/Pages/auth/utils/server'
 
-export async function emailLogin(FormData) {
+export async function emailLogin(formData) {
   const supabase = await createClient()
 
   const data = {
     email: formData.get('email'),
-    password: formData.get('password') ,
+    password: formData.get('password'),
   }
 
   const { error } = await supabase.auth.signInWithPassword(data)
@@ -23,20 +23,28 @@ export async function emailLogin(FormData) {
   redirect('/Board/1')
 }
 
-export async function signup( FormData) {
+export async function signup(formData) {
   const supabase = await createClient()
 
   const data = {
-    email: formData.get('email') ,
+    email: formData.get('email'),
     password: formData.get('password'),
   }
 
   const { error } = await supabase.auth.signUp(data)
 
   if (error) {
-    redirect('/login?message=Error siging up ')
+    redirect('/login?message=Error signing up')
   }
 
   revalidatePath('/', 'layout')
-  redirect('/login')
+  redirect('/')
+}
+
+
+
+export async function signOut(){
+  const supabase = createClient();
+  await supabase.auth.signOut();
+  redirect('/');
 }

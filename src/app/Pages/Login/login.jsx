@@ -1,44 +1,23 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { emailLogin, signup } from './actions';
 
-const Login= ()=> {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  // If you want to use server actions instead, you can remove handleSubmit
+  // and directly use the formAction on the button
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
-    
-    try {
-      // Placeholder for actual authentication logic
-      // Replace with your authentication method (e.g., NextAuth.js, API call)
-      console.log('Login attempt with:', { email, password });
-      
-      // Simulate authentication delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // For demo purposes - replace with actual login logic
-      if (email && password) {
-        window.location.href = '/dashboard';
-      } else {
-        setError('Invalid credentials');
-      }
-    } catch (err) {
-      setError('An error occurred during login');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+    console.log("ya man idk");
   };
 
   return (
     <div className="flex min-h-screen bg-black">
       <Head>
-        <title>Login | Your App</title>
         <meta name="description" content="Login to your account" />
       </Head>
       
@@ -62,6 +41,7 @@ const Login= ()=> {
               </label>
               <input
                 id="email"
+                htmlFor="email"
                 name="email"
                 type="email"
                 autoComplete="email"
@@ -87,6 +67,7 @@ const Login= ()=> {
               </div>
               <input
                 id="password"
+                htmlFor="password"
                 name="password"
                 type="password"
                 autoComplete="current-password"
@@ -107,13 +88,14 @@ const Login= ()=> {
               className="w-4 h-4 text-purple-500 border-gray-700 rounded focus:ring-purple-500 bg-gray-800"
             />
             <label htmlFor="remember-me" className="block ml-2 text-sm text-gray-400">
+              {/* TODO : ADD REMEMBER ME FUNCTION */}
               Remember me
             </label>
           </div>
           
           <div>
             <button
-              type="submit"
+              formAction={emailLogin}
               disabled={loading}
               className="w-full px-4 py-2 text-sm font-medium text-white bg-purple-600 border border-transparent rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 transition-colors duration-200"
             >
@@ -139,12 +121,6 @@ const Login= ()=> {
         </div>
         
         <div className="grid grid-cols-1 gap-3">
-          {/* <button
-            type="button"
-            className="inline-flex justify-center items-center py-2 px-4 border border-gray-700 rounded-md shadow-sm bg-gray-800 text-sm font-medium text-gray-400 hover:bg-gray-700"
-          >
-            Google
-          </button> */}
           <button
             type="button"
             className="inline-flex justify-center items-center py-2 px-4 border border-gray-700 rounded-md shadow-sm bg-gray-800 text-sm font-medium text-gray-400 hover:bg-gray-700"
@@ -157,5 +133,4 @@ const Login= ()=> {
   );
 }
 
-
-export default Login
+export default Login;
