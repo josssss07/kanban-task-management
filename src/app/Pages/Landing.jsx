@@ -4,12 +4,16 @@ import React from 'react'
 import Navbar from './LandingComponents/Navbar';
 import MainArea from './LandingComponents/MainArea';
 import BottomNav from './LandingComponents/BottomNav';
-import PomodoroTimer from './Pomodoro/pomodoro';
+import Login from './login/login';
+
 const Landing = () => {
   return (
     <div>
-      <Navbar></Navbar>
-      <MainArea></MainArea> 
+      {/* <Navbar></Navbar>
+      <MainArea></MainArea>  */}
+
+        <Login></Login>
+
     </div>
   )
 }
