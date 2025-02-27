@@ -1,4 +1,4 @@
-//TODO: add a bottom nav bar that just does something????
+//TODO: adoauth with github and google g
 'use client';
 import React from 'react'
 import Navbar from './LandingComponents/Navbar';
