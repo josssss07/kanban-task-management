@@ -10,7 +10,6 @@ const Landing = () => {
     <div>
       <Navbar></Navbar>
       <MainArea></MainArea> 
-      <PomodoroTimer></PomodoroTimer>
     </div>
   )
 }
