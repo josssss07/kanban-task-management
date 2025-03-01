@@ -1,3 +1,0 @@
-create the auth, login, resister and some other necessrary pages 
-figure out what else needs to be done for that and then make adleena wire it up to supabase
-once that is done begin adding external modules for pomodoro, news and calender

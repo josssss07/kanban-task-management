@@ -1,2 +1,0 @@
-# Kanban task management system 
-
