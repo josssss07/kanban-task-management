@@ -1,0 +1,79 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/*   
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}  */
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background:transparent;
+}
+::-webkit-scrollbar-thumb{
+  background:var(--color-lineinput);
+  border-radius:25px;
+}
+:root{
+  --color-prefer: "light";
+  --color-text: rgb(0,0,0);
+  --color-background: rgb(255,255,255);
+  --color-dialog: rgb(255,255,255);
+  --color-backgroundlighter:rgb(244, 247, 253);
+  --color-lineborder:rgb(228, 235, 250);
+  --color-lineinput:rgb(131, 144 , 164);
+
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --color-prefer: "dark";
+    --color-text: rgb(255,255,255);
+    --color-background: rgb(0,0,0);
+    --color-dialog: rgb(43, 44, 55);
+    --color-backgroundlighter: rgb(32, 33, 44);
+    --color-lineborder: rgb(62, 63, 76);
+    --color-lineinput: rgb(130, 143, 163);
+  }
+
+}
+
+body{
+  background: var(--color-background);
+  color: var(--color-text);
+}
+[data-radix-focus-scope] {
+  pointer-events: auto;
+}
